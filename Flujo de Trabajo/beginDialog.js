@@ -9,7 +9,7 @@ bot.dialog('/', [
     },
     function (session, results) {
         let msj = results.response;
-        session.send('Hola ${msj}');
+        session.send(`Hola ${msj}`);
 
         session.beginDialog('/preguntarLugar');
     }
@@ -22,5 +22,17 @@ bot.dialog('/preguntarLugar', [
     function (session, results) {
         let lugar = results.response;
         session.endDialog(`Saludos por ${lugar}`);
+
+        session.beginDialog('/preguntarEdad');
     }
 ]);
+/*
+bot.dialog('/preguntarEdad', [
+    function (session) {
+        builder.Prompts.text(session, 'Cúantos años tienes?');
+    },
+    function (session, results) {
+        let edad = results.response;
+        session.endDialog(`Que vivan los ${edad}!!!`);
+    }
+]); */
