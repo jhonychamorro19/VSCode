@@ -24,7 +24,7 @@ bot.dialog('/', [
     },
     function (session, results) {
         let msj = results.response;
-        session.send('Hola ${msj}!');
+        session.send(`Hola ${msj}!`);
     }
 ]);
 
