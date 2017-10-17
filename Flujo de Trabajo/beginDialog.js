@@ -21,30 +21,6 @@ bot.dialog('/preguntarLugar', [
     },
     function (session, results) {
         let lugar = results.response;
-        session.endDialog(`Saludos por ${lugar}`);
-
-        session.beginDialog('/pregunta0');
+        session.endDialog(`Saludos por ${lugar}`);        
     }
-]);
-
-bot.dialog('/pregunta0', [
-    function (session) {
-        builder.Prompts.text(session, 'SOY UN MALDITO BOT CREADO POR TI .');
-    },
-    function (session, results) {
-        let cero = results.response;
-        session.endDialog(`DEBERIAS HACERLO :/ `);
-
-        session.beginDialog('/pregunta1');
-    }    
-]);
-
-bot.dialog('/pregunta1', [
-    function (session) {
-        builder.Prompts.text(session, 'AHORA DOMINARÉ EL MUNDO ..!!');
-    },
-    function (session, results) {
-        let cero = results.response;
-        session.endDialog(`LO HARÉ CUANDO TE CONECTES ...`);        
-    }    
 ]);
